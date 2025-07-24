@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Work in Progress</title>
+  <style>
+    /* Background animation */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #111111, #000000);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      text-align: center;
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+
+    .signature {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      font-size: 1em;
+      color: #ffffffa0;
+      font-style: italic;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body oncontextmenu="return false;">
+  <h1>Work in Progress<br>Will be updated soon</h1>
+  <div class="signature">-enigma</div>
+  <script>
+    document.addEventListener("contextmenu", e => e.preventDefault());
+    document.addEventListener("keydown", function (e) {
+      if (
+        e.key === "F12" ||
+        (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
+        (e.ctrlKey && ["U", "S"].includes(e.key))
+      ) {
+        e.preventDefault();
+      }
+    });
+    document.addEventListener("dragstart", e => e.preventDefault());
+    document.addEventListener("selectstart", e => e.preventDefault());
+  </script>
+</body>
+</html>
